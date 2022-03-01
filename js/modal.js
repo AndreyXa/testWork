@@ -1,6 +1,8 @@
 let closeModal = document.querySelector('.modal-text');
 let closeModal2 = document.querySelector('.imgclose');
 let modal = document.querySelector('.modal');
+let modalTitle = document.querySelector('.modal-title');
+let modalSubtitle = document.querySelector('.modal-subtitle');
 
 closeModal.onclick = function () {
    modal.classList.remove('modal_active');
@@ -17,14 +19,15 @@ form.addEventListener('submit', formSend);
 function formSend(e) {
    e.preventDefault();
    let request = new XMLHttpRequest();
-   
+   console.log(request);
    request.onreadystatechange = function () {
       if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
-         console.log('SUCCESS!');
          modal.classList.add('modal_active');
          form.reset();
       } else {
-         console.log('error');
+         modal.classList.add('modal_active');
+         modalTitle.innerHTML = 'ERROR';
+         modalSubtitle.remove();
       }
    }
 

@@ -232,12 +232,12 @@ body {
 }
 
 .modal-content {
+   margin: auto;
    max-width: 320px;
    padding: 100px 30px;
    background: #f9f9f9;
    border-radius: 3px;
    position: relative;
-   box-shadow: 0 5px 15px black;
 }
 
 .modal-close {
